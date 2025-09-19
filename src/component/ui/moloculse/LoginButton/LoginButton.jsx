@@ -6,27 +6,29 @@ import P from '../../atoms/P/P';
 import { motion } from 'framer-motion';
 import { LoginContaxt } from '../../../../context/LoginWindow';
 import { toast, ToastContainer } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 
-function LoginButton() {
+function LoginButton({setNumbers}) {
     const [start,setStart]=useState()
     const [valueinput,setvalueinput]=useState("")
     const {setNextWindow } = useContext(LoginContaxt);
     
+    
 
+const handelNext = () => {
+  const phoneRegex = /^09\d{9}$/;
+  if (!valueinput) {
+    toast.error("شماره همراه را وارد کنید.");
+    return;
+  }
+  if (!phoneRegex.test(valueinput)) {
+    toast.error("شماره همراه نادرست است.");
+    return;
+  }
+  setNumbers(valueinput);
+  setNextWindow("2");
+};
 
-   useEffect(()=>{
-    localStorage.setItem("user",valueinput)
-   },[valueinput])
-    const handelNext=()=>{
-        if(valueinput==""){
-            toast.error("شماره همراه را پر کنید")
-        }else if(valueinput){
-            toast.error("شماره همراه نادرست است")
-        }
-        if(valueinput.length==11){
-           setNextWindow("2")
-        }
-    }
 
  
     return (

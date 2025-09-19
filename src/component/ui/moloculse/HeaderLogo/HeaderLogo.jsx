@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function HeaderLogo() {
   return (
-    <div>
+    <div className=" w-1/4 flex items-center justify-end ">
         <Icon name="logo" />
     </div>
   );
