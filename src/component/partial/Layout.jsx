@@ -1,3 +1,4 @@
+import { Footer } from "../ui/organisms/Footer/Footer";
 import Header from "../ui/organisms/Header/Header";
 
 function Layout({ children }) {
@@ -8,7 +9,7 @@ function Layout({ children }) {
       </div>
       <div>{children}</div>
       <div >
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
