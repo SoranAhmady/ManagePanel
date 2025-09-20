@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export function FooterItemBar({ title = '', item = [], icon }) {
     return (
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6 ">
             <P className={'text-white text-xl '}>
                 {title}
             </P>
