@@ -18,9 +18,9 @@ function HeaderNavbar() {
             <motion.p  onClick={() => setClicked("3")}   animate={{borderBottom: clicked=="3" ? "2px solid #417F56" : "none",color: clicked=="3" ? "#417F56" : "#717171",fontWeight:clicked=="3"?"bold":"normal" }}
                   transition={{ duration: 0.2 }}>اعطای نمایندگی</motion.p>
 
-            <DropDownHeader Option={ArayDropDown2} defultText="منو" classDirections="top-10 right-5 " />
+            <DropDownHeader Option={ArayDropDown2} defultText="منو" classDirections="top-10 right-5 z-10 " />
 
-            <DropDownHeader Option={ArayDropDown1} defultText="شعبه" classDirections="top-10 left-5 " />
+            <DropDownHeader Option={ArayDropDown1} defultText="شعبه" classDirections="top-10 left-5  z-10" />
 
             <motion.p  onClick={() => setClicked("4")}   animate={{borderBottom: clicked=="4" ? "2px solid #417F56" : "none",color: clicked=="4" ? "#417F56" : "#717171",fontWeight:clicked=="4"?"bold":"normal" }}
                   transition={{ duration: 0.2 }}>صفحه اصلی</motion.p>

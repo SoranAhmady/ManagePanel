@@ -9,6 +9,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { UserAxios } from "./core/Redux/GetAPI";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./page/HomePage/HomePage";
 
 function App() {
   const { openLogin } = useContext(LoginContaxt);
@@ -30,7 +31,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/Login" element={openLogin && <Login />} />
-          <Route path="/" element={<p>Home</p>} />
+          <Route path="/" element={<HomePage/>} />
         </Routes>
       </Layout>
     </BrowserRouter>

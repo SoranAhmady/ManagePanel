@@ -28,7 +28,7 @@ function Headericon() {
             onClick={() => setOpen(!open)}
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 1, repeat: Infinity }}
-            className={`w-fit ${
+            className={`w-fit  ${
               open ? "" : "max-w-[2vw]"
             }  h-[2vw] bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px]  `}
           >
@@ -41,7 +41,7 @@ function Headericon() {
               onClick={() => setopenLogin(true)}
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
-              className={`w-fit ${
+              className={`w-fit  ${
                 open ? "" : "max-w-[2vw]"
               }  h-[2vw] bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px]  `}
             >
@@ -55,7 +55,7 @@ function Headericon() {
             initial={{ opacity: 0, x: -10, h: 0 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="w-[9vw]  h-[11vw] bg-white shadow-[0px_0px_6px_0px_#00000026] absolute top-10 rounded-md text-[#353535] text-[0.8vw] flex flex-col items-center   "
+            className="w-[9vw] z-10  h-[11vw] bg-white shadow-[0px_0px_6px_0px_#00000026] absolute top-10 rounded-md text-[#353535] text-[0.8vw] flex flex-col items-center   "
           >
             {ArayUser.map((item, index) => (
               <motion.div
