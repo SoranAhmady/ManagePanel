@@ -21,8 +21,9 @@ function Login() {
     
 
     return (
-        <div className="w-screen h-screen bg-[#00000099] flex items-center justify-center fixed blur-[6] top-0 z-50   ">
-            <div className="w-[30vw] h-[25vw] rounded-lg  border-[#CBCBCB] border-[1px]  bg-[#FFFFFF] ">
+        <div className="w-screen h-screen  flex items-center justify-center fixed top-0 left-0 z-50  ">
+  <div className="absolute inset-0 backdrop-blur-sm bg-[#00000099]"></div>
+            <div className="w-[30vw] relative z-10 h-[25vw] rounded-lg  border-[#CBCBCB] border-[1px]  bg-[#FFFFFF] ">
                {NextWindow=="1"&&<Loginform setNumbers={setNumbers}/>}
                {NextWindow=="2"&&<LoginPassword Numbers={Numbers} setPassword={setPassword}  />}
             </div>
