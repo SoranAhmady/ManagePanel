@@ -15,7 +15,7 @@ export function Footer() {
             <div>
                 <FooterItemBar title="شعبه‌های ترخینه" item={tarkhineShab} />
             </div>
-            <div className="  hidden sm:flex  ">
+            <div className="  hidden sm:flex sm:flex-col sm:w-[45%]  ">
                 <FooterContactUs />
             </div>
         </motion.footer>

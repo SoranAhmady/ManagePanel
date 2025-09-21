@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import "./App.css";
 import Layout from "./component/partial/Layout";
 import Login from "./page/Login/Login";
-import { LoginContaxt } from "./context/LoginWindow";
 import { useDispatch } from "react-redux";
 import { UserAxios } from "./core/Redux/GetAPI";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MenuPage } from "./page/MenuPage/MenuPage";
 import HomePage from "./page/HomePage/HomePage";
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
   useEffect(() => {
     const Data = async () => {
       try {
-        const result = await dispatch(UserAxios("/users")).unwrap();
-        console.log(result.response);
+        await dispatch(UserAxios("/users")).unwrap();
+        await dispatch(UserAxios("/product")).unwrap()
       } catch (error) {
         error
       }
@@ -26,6 +26,8 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
+          <Route path="/Login" element={openLogin && <Login />} />
+          <Route path="/menu" element={<MenuPage />}/> 
           <Route path="/" element={<HomePage/>} />
         </Routes>
       </Layout>
