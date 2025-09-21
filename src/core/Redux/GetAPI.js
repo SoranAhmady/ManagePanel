@@ -10,6 +10,7 @@ export const UserAxios = createAsyncThunk("users/fetchUser", async (method) => {
 const initialState = {
   isLogin: false,
   users: [],
+  product: [],
   error: false,
   loding: false,
   role: "",
@@ -41,7 +42,13 @@ const UserSlice = createSlice({
       })
       .addCase(UserAxios.fulfilled, (state, action) => {
         state.error = false;
-        state.users = action.payload.response;
+        if (action.payload.method == '/users') {
+          state.users = action.payload.response;
+
+        } else {
+          state.product = action.payload.response
+        }
+
       })
       .addCase(UserAxios.rejected, (state, action) => {
         state.error = false;

@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Icon from '../../atoms/Icon/Icon';
-import P from '../../atoms/P/P';
 import { ArayDropDown1, ArayDropDown2 } from '../../../../core/constans/ArayDrop';
 import DropDownHeader from '../DropDownHeader/DropDownHeader';
 
