@@ -26,7 +26,7 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/Login" element={openLogin && <Login />} />
+          <Route path="/Login" element={<Login />} />
           <Route path="/menu" element={<MenuPage />}/> 
           <Route path="/" element={<HomePage/>} />
         </Routes>
