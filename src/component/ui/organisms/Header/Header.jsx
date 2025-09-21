@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 function Header() {
     
     return (
-        <motion.div initial={{translateX:-700}} animate={{translateX:0}} transition={{duration:2}} className="w-full h-[5.99vw] bg-[#ffff] flex items-center justify-between px-[6vw]  " >
+        <motion.div initial={{translateY:-100}} animate={{translateY:0}} transition={{duration:1,delay:0.1}} className="w-full h-[5.99vw] bg-[#ffff] flex items-center justify-between px-[6vw]  " >
             <Headericon/>
             <HeaderNavbar/>
             <HeaderLogo/>

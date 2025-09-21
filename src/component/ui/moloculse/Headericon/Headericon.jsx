@@ -12,7 +12,6 @@ function Headericon() {
 
   const isLogin = JSON.parse(localStorage.getItem("user"))
   
-  
   const { setopenLogin } = useContext(LoginContaxt);
 
   const HandelLogUot = () => {
@@ -23,9 +22,8 @@ function Headericon() {
   return (
     <div className="flex items-center justify-start gap-3  w-1/4 ">
       <div className="relative">
-        {isLogin ? (
           <motion.button
-            onClick={() => setOpen(!open)}
+            onClick={() => isLogin?setOpen(!open):setopenLogin(true)}
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 1, repeat: Infinity }}
             className={`w-fit  ${
@@ -35,21 +33,7 @@ function Headericon() {
             {open && <Icon name="dropGreen" />}
             <Icon name="user" />
           </motion.button>
-        ) : (
-          <NavLink to={"/Login"}>
-            <motion.button
-              onClick={() => setopenLogin(true)}
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-              className={`w-fit  ${
-                open ? "" : "max-w-[2vw]"
-              }  h-[2vw] bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px]  `}
-            >
-              {open && <Icon name="dropGreen" />}
-              <Icon name="user" />
-            </motion.button>
-          </NavLink>
-        )}
+        
         {open && (
           <motion.div
             initial={{ opacity: 0, x: -10, h: 0 }}

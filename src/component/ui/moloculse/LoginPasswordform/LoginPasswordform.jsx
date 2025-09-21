@@ -13,44 +13,57 @@ import { useNavigate } from "react-router-dom";
 function LoginPasswordform({ setPassword }) {
   const { setNextWindow } = useContext(LoginContaxt);
   const [otp, setOtp] = useState("");
+
+  const navigate = useNavigate();
+  const isLogin = useSelector((state) => state.User.isLogin);
+  const users = useSelector((state) => state.User.users);
   
-  const  navigate = useNavigate()
-  const isLogin = useSelector((state) => state.User.isLogin); 
-  const users = useSelector((state) => state.User.users); 
+
   const handelNext = () => {
-    if (otp.trim() === "") {
+    if(users.password){
+      if (otp.trim() === "") {
       toast.error("کد تایید را وارد کنید.");
       return;
     }
-    if(users.password !== otp ){
-         toast.error(" کد تایید اشتباه است .");
+    if (users.password !== otp) {
+      toast("در حال بررسی کد تایید...", {
+        toastId: "verifyingOtp",
+        className:
+          "bg-[#ffff] [direction:rtl] px-10 text-[#417F56] text-[1.5vw]",
+        hideProgressBar: true,
+      });
+      setTimeout(() => {
+        toast.error(" کد تایید اشتباه است .");
+      }, 500);
     }
-    setPassword(otp); 
+    setPassword(otp);
+    }else(
+      toast.error(" مشکل اینترنت 404 ")
+    )
   };
+
   useEffect(() => {
     if (isLogin) {
       toast("در حال بررسی کد تایید...", {
         toastId: "verifyingOtp",
-        className: "bg-[#ffff] [direction:rtl] px-10 text-[#417F56] text-[1.5vw]",
+        className:
+          "bg-[#ffff] [direction:rtl] px-10 text-[#417F56] text-[1.5vw]",
         hideProgressBar: true,
-        autoClose: false,
       });
       setTimeout(() => {
         toast.success(" کد تایید شد", {
-          className: "bg-[#E5F2E9] [direction:rtl] px-10 text-[#417F56] text-[1.5vw]",
+          className:
+            "bg-[#E5F2E9] [direction:rtl] px-10 text-[#417F56] text-[1.5vw]",
           autoClose: 3000,
           hideProgressBar: false,
           isLoading: false,
         });
       }, 500);
       setTimeout(() => {
-        navigate("/")
         window.location.reload();
       }, 3000);
-      
     }
   }, [isLogin]);
-
 
   const { min, sec } = useTimer(1.5);
 

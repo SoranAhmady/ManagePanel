@@ -18,15 +18,12 @@ function SliderHeaderPage() {
   ];
 
   return (
-    <motion.div
-      initial={{ height: "0vh" }}
-      animate={{ height: "50vh" }}
-      transition={{ duration: 2 }}
-      className="w-screen max-h-[50vh] flex items-center relative justify-center flex-col"
+    <div
+      className="w-full  h-[50vh] flex items-center relative justify-center flex-col"
     >
-      <motion.div className=" flex items-center justify-center cursor-pointer Prev w-[40px] h-[40px] absolute left-5  z-10 rounded-full ">
+      <div className=" flex items-center justify-center cursor-pointer Prev w-[40px] h-[40px] absolute left-5  z-10 rounded-full ">
         <Icon name="next" />
-      </motion.div>
+      </div>
 
       <Swiper
         modules={[Pagination, Navigation]}
@@ -36,7 +33,6 @@ function SliderHeaderPage() {
         loop
         slidesPerView={1}
         className="w-full h-full  "
-        // style={{}}
       >
         {ArayImage.map((item) => (
           <SwiperSlide key={item.id}>
@@ -47,7 +43,7 @@ function SliderHeaderPage() {
               <P className="text-white text-[2.5vw] [direction:rtl] font-semibold mt-[5vw]">
                 {item.text}
               </P>
-              <Button className="w-[10vw] h-[2.5vw] text-white bg-[#417F56] rounded-[8px]  ">
+              <Button className="w-[10vw] h-[2.5vw] text-white bg-[#417F56] rounded-[8px] hover:shadow-[inset_2px_2px_5px_0px_#193121]   ">
                 سفارش آنلاین غذا
               </Button>
             </div>
@@ -62,7 +58,7 @@ function SliderHeaderPage() {
       <div className="absolute  z-10  bottom-0 h-[33px] inverted-radius flex items-center justify-center ">
         <div className="custom-pagination w-full flex items-center justify-center "></div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
