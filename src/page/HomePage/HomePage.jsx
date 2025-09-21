@@ -5,6 +5,7 @@ import ListBranchsHomePage from '../../component/ui/organisms/ListBranchsHomePag
 import { useContext } from 'react';
 import { LoginContaxt } from '../../context/LoginWindow';
 import Login from '../Login/Login';
+import InputSerchHomePage from '../../component/ui/moloculse/InputSerchHomePage/InputSerchHomePage';
 
 
 function HomePage() {
@@ -15,7 +16,10 @@ function HomePage() {
             <section>
                 <SliderHeaderPage/>
             </section>
-            <section className='my-[3vw]'>
+            <section className='flex my-[7vw] md:hidden w-full items-center justify-center'>
+                <InputSerchHomePage/>
+            </section>
+            <section className='md:my-[3vw] my-[6vw] '>
                 <ListMenuHomePage/>
             </section>
             <section className='my-[2vw]'>

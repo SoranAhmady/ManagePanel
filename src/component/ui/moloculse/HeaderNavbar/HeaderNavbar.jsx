@@ -8,7 +8,7 @@ import DropDownHeader from '../DropDownHeader/DropDownHeader';
 function HeaderNavbar() {
       const [clicked, setClicked] = useState("4");
     return (
-        <div className="  w-[47%]  text-[#717171] flex items-center justify-between  ">
+        <div className="  w-full  text-[#717171] flex items-center justify-between  ">
             <motion.p onClick={() => setClicked("1")} className='cursor-pointer'  animate={{borderBottom: clicked=="1" ? "2px solid #417F56" : "none",color: clicked=="1" ? "#417F56" : "#717171",fontWeight:clicked=="1"?"bold":"normal" }}
                   transition={{ duration: 0.2 }}>تماس با ما</motion.p>
 
