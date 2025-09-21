@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme{
+  --breakpoint-xs: 30rem;
+}
 
 /* https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
 input::-webkit-outer-spin-button,
@@ -32,7 +35,6 @@ input::-webkit-inner-spin-button {
 
 ::-webkit-scrollbar-track {
     background: transparent;
-
     border-radius: 99999px !important;
 
 }
@@ -48,8 +50,21 @@ input::-webkit-inner-spin-button {
     radial-gradient(var(--r) at var(--r) 0,#0000 98%,#000 101%)
       calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
     conic-gradient(#000 0 0) padding-box;
-  background: #ffffff border-box; /* border-box is needed for a gradient coloration */
+  background: #ffffff border-box; 
   width: 150px;
+}
+.inverted-radius2{
+  --r: 15px; 
+  line-height: 1.8; 
+  padding-inline: .5em;
+  border-inline: var(--r) solid #0000;
+  border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
+  mask: 
+    radial-gradient(var(--r) at var(--r) 0,#0000 98%,#000 101%)
+      calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
+    conic-gradient(#000 0 0) padding-box;
+  background: #ffffff border-box; 
+  width: 120px;
 }
 
 .BgImageGradint{

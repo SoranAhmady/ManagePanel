@@ -1,5 +1,5 @@
-import { ToPersianNumber } from "topersiannumber";
 import Span from "../../atoms/Span/Span"
+import { ToPersianNumber } from 'topersiannumber';
 
 export function ChangeToFa({ value }) {
     const persianFormattedNumber = ToPersianNumber(value);

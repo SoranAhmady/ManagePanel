@@ -20,15 +20,15 @@ function Headericon() {
   };
 
   return (
-    <div className="flex items-center justify-start gap-3  w-1/4 ">
+    <div className="flex items-center justify-start gap-3  w-1/4">
       <div className="relative">
           <motion.button
             onClick={() => isLogin?setOpen(!open):setopenLogin(true)}
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 1, repeat: Infinity }}
-            className={`w-fit  ${
-              open ? "" : "max-w-[2vw]"
-            }  h-[2vw] bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px]  `}
+            className={`md:w-fit w-[24px]  ${
+              open ? "" : "md:max-w-[2vw] "
+            }  md:h-[2vw] h-[24px] bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px]  `}
           >
             {open && <Icon name="dropGreen" />}
             <Icon name="user" />
@@ -61,14 +61,14 @@ function Headericon() {
       <motion.button
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 1, repeat: Infinity }}
-        className="w-[2vw] h-[2vw] bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px] "
+        className="md:w-[2vw] md:h-[2vw]  w-[24px] h-[24px]  bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px] "
       >
         <Icon name="basked" />
       </motion.button>
-      <motion.button
+      <motion.button 
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 1, repeat: Infinity }}
-        className="w-[2vw] h-[2vw] bg-[#E5F2E9] rounded-md flex items-center justify-center p-[6px] "
+        className="md:h-[2vw] md:w-[2vw] h-[24px] w-[24px] md:flex hidden bg-[#E5F2E9] rounded-md  items-center justify-center p-[6px] "
       >
         <Icon name="serch" />
       </motion.button>
