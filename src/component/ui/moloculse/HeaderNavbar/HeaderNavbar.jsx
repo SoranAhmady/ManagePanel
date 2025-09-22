@@ -1,30 +1,66 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArayDropDown1, ArayDropDown2 } from '../../../../core/constans/ArayDrop';
-import DropDownHeader from '../DropDownHeader/DropDownHeader';
+import {
+  ArayDropDown1,
+  ArayDropDown2,
+} from "../../../../core/constans/ArayDrop";
+import DropDownHeader from "../DropDownHeader/DropDownHeader";
+import P from "../../atoms/P/P";
+import { NavLink } from "react-router-dom";
 
 function HeaderNavbar() {
-      const [clicked, setClicked] = useState("4");
-    return (
-        <div className="  w-full  text-[#717171] flex items-center justify-between  ">
-            <motion.p onClick={() => setClicked("1")} className='cursor-pointer'  animate={{borderBottom: clicked=="1" ? "2px solid #417F56" : "none",color: clicked=="1" ? "#417F56" : "#717171",fontWeight:clicked=="1"?"bold":"normal" }}
-                  transition={{ duration: 0.2 }}>تماس با ما</motion.p>
-
-            <motion.p  onClick={() => setClicked("2")} className='cursor-pointer'  animate={{borderBottom: clicked=="2" ? "2px solid #417F56" : "none",color: clicked=="2" ? "#417F56" : "#717171",fontWeight:clicked=="2"?"bold":"normal" }}
-                  transition={{ duration: 0.2 }}>درباره ما</motion.p>
-
-            <motion.p  onClick={() => setClicked("3")} className='cursor-pointer'  animate={{borderBottom: clicked=="3" ? "2px solid #417F56" : "none",color: clicked=="3" ? "#417F56" : "#717171",fontWeight:clicked=="3"?"bold":"normal" }}
-                  transition={{ duration: 0.2 }}>اعطای نمایندگی</motion.p>
-
-            <DropDownHeader Option={ArayDropDown2} defultText="منو" classDirections="top-10 right-2 z-10 " />
-
-            <DropDownHeader Option={ArayDropDown1} defultText="شعبه" classDirections="top-10 left-2  z-10" />
-
-            <motion.p  onClick={() => setClicked("4")} className='cursor-pointer'  animate={{borderBottom: clicked=="4" ? "2px solid #417F56" : "none",color: clicked=="4" ? "#417F56" : "#717171",fontWeight:clicked=="4"?"bold":"normal" }}
-                  transition={{ duration: 0.2 }}>صفحه اصلی</motion.p>
-
-        </div>
-    )
+  return (
+    <div className="w-full text-[#717171] flex items-center justify-between  ">
+      <NavLink
+        to={"/contact"}
+        style={({ isActive }) => ({
+          color: isActive ? "#417F56" : "#717171",
+          fontWeight: isActive ? "bold" : "normal",
+          borderBottom:isActive ?  "2px solid #417F56":"none",
+        })}
+      >
+        تماس با ما
+      </NavLink>
+      <NavLink
+        to={"/about"}
+        style={({ isActive }) => ({
+          color: isActive ? "#417F56" : "#717171",
+          fontWeight: isActive ? "bold" : "normal",
+          borderBottom:isActive ?  "2px solid #417F56":"none",
+        })}
+      >
+        درباره ما
+      </NavLink>
+      <NavLink
+        to={"/representation"}
+        style={({ isActive }) => ({
+          color: isActive ? "#417F56" : "#717171",
+          fontWeight: isActive ? "bold" : "normal",
+          borderBottom:isActive ?  "2px solid #417F56":"none",
+        })}
+      >
+        اعطای نمایندگی
+      </NavLink>
+      <DropDownHeader
+        Option={ArayDropDown2}
+        defultText="منو"
+        classDirections="top-10 right-2 z-10 "
+      />
+      <DropDownHeader
+        Option={ArayDropDown1}
+        defultText="شعبه"
+        classDirections="top-10 left-2  z-10"
+      />
+      <NavLink
+        to={"/"}
+        style={({ isActive }) => ({
+          color: isActive ? "#417F56" : "#717171",
+          fontWeight: isActive ? "bold" : "normal",
+          borderBottom:isActive ?  "2px solid #417F56":"none",
+        })}
+      >
+        صفحه اصلی
+      </NavLink>
+    </div>
+  );
 }
 
-export default HeaderNavbar
+export default HeaderNavbar;

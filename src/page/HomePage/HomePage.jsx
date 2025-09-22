@@ -2,17 +2,13 @@ import SliderHeaderPage from './../../component/ui/organisms/SliderHeaderPage/Sl
 import ListMenuHomePage from './../../component/ui/organisms/ListMenuHomePage/ListMenuHomePage';
 import InformationHomePage from './../../component/ui/organisms/InformationHomePage/InformationHomePage';
 import ListBranchsHomePage from '../../component/ui/organisms/ListBranchsHomePage/ListBranchsHomePage';
-import { useContext } from 'react';
-import { LoginContaxt } from '../../context/LoginWindow';
-import Login from '../Login/Login';
 import InputSerchHomePage from '../../component/ui/moloculse/InputSerchHomePage/InputSerchHomePage';
 
 
 function HomePage() {
-  const { openLogin } = useContext(LoginContaxt);
 
     return (
-        <div className="w-full flex flex-col justify-center ">
+        <div className="w-full flex flex-col justify-center  ">
             <section>
                 <SliderHeaderPage/>
             </section>
@@ -28,7 +24,6 @@ function HomePage() {
             <section className='my-[3vw]'>
                 <ListBranchsHomePage/>
             </section>
-            {openLogin && <Login />}
         </div>
     )
 }
