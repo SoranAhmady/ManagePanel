@@ -2,71 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme{
+@theme {
   --breakpoint-xs: 30rem;
 }
 
 /* https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 @font-face {
-    font-family: Estedad;
-    src: url(../public/assets/Estedad-Regular.woff2);
+  font-family: Estedad;
+  src: url(../public/assets/Estedad-Regular.woff2);
 }
 
 * {
-    font-family: Estedad;
+  font-family: Estedad;
 }
-
-
+html{
+  max-width: 100% !important ;
+  border: 1px solid black;
+}
+body {
+  max-width: 100% !important;
+}
+/* 
 ::-webkit-scrollbar {
-    width: 8px;
-    background: transparent;
+  width: 8px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: white;
-    border-radius: 99999px !important;
-    cursor: pointer;
+  background: white;
+  border-radius: 99999px !important;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 99999px !important;
+  background: transparent;
+  border-radius: 99999px !important;
 
-}
+} */
 
 /* https://css-shape.com/rounded-tab/ */
-.inverted-radius{
-  --r: 25px; 
-  line-height: 1.8; 
+.inverted-radius {
+  --r: 25px;
+  line-height: 1.8;
   padding-inline: .5em;
   border-inline: var(--r) solid #0000;
   border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
-  mask: 
-    radial-gradient(var(--r) at var(--r) 0,#0000 98%,#000 101%)
-      calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
+  mask:
+    radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%) calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
     conic-gradient(#000 0 0) padding-box;
-  background: #ffffff border-box; 
+  background: #ffffff border-box;
   width: 150px;
 }
-.inverted-radius2{
-  --r: 15px; 
-  line-height: 1.8; 
+
+.inverted-radius2 {
+  --r: 15px;
+  line-height: 1.8;
   padding-inline: .5em;
   border-inline: var(--r) solid #0000;
   border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
-  mask: 
-    radial-gradient(var(--r) at var(--r) 0,#0000 98%,#000 101%)
-      calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
+  mask:
+    radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%) calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
     conic-gradient(#000 0 0) padding-box;
-  background: #ffffff border-box; 
+  background: #ffffff border-box;
   width: 120px;
 }
 
-.BgImageGradint{
+.BgImageGradint {
   background: linear-gradient(360deg, #000000 0%, rgba(255, 255, 255, 0) 60%);
 }

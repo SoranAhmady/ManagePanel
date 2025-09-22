@@ -39,19 +39,26 @@ const UserSlice = createSlice({
     builder
       .addCase(UserAxios.pending, (state) => {
         state.error = false;
+        state.loding = true
       })
       .addCase(UserAxios.fulfilled, (state, action) => {
         state.error = false;
         if (action.payload.method == '/users') {
           state.users = action.payload.response;
+          state.loding = false
+
 
         } else {
           state.product = action.payload.response
+          state.loding = false
+
         }
 
       })
       .addCase(UserAxios.rejected, (state, action) => {
         state.error = false;
+        state.loding = true
+
       });
   },
 });

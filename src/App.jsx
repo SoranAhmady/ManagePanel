@@ -27,7 +27,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/Login" element={<Login />} />
-          <Route path="/menu" element={<MenuPage />}/> 
+          <Route path="/branchpage" element={<MenuPage />}/> 
           <Route path="/" element={<HomePage/>} />
         </Routes>
       </Layout>
