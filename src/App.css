@@ -21,6 +21,14 @@ input::-webkit-inner-spin-button {
   font-family: Estedad;
 }
 
+html{
+  max-width: 100% !important ;
+  border: 1px solid black;
+}
+body {
+  max-width: 100% !important;
+}
+/* 
 ::-webkit-scrollbar {
   width: 8px;
   background: transparent;
@@ -28,6 +36,7 @@ input::-webkit-inner-spin-button {
 
 ::-webkit-scrollbar-thumb {
   background: #00000080;
+  
   border-radius: 99999px !important;
   cursor: pointer;
 }
@@ -35,29 +44,32 @@ input::-webkit-inner-spin-button {
 ::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 99999px !important;
-}
+
 
 /* https://css-shape.com/rounded-tab/ */
 .inverted-radius {
   --r: 25px;
   line-height: 1.8;
-  padding-inline: 0.5em;
+
+  padding-inline: .5em;
   border-inline: var(--r) solid #0000;
-  border-radius: calc(2 * var(--r)) calc(2 * var(--r)) 0 0 / var(--r);
-  mask: radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%)
-      calc(-1 * var(--r)) 100%/100% var(--r) repeat-x,
+  border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
+  mask:
+    radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%) calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
     conic-gradient(#000 0 0) padding-box;
   background: #ffffff border-box;
   width: 150px;
 }
+
+
 .inverted-radius2 {
   --r: 15px;
   line-height: 1.8;
-  padding-inline: 0.5em;
+  padding-inline: .5em;
   border-inline: var(--r) solid #0000;
-  border-radius: calc(2 * var(--r)) calc(2 * var(--r)) 0 0 / var(--r);
-  mask: radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%)
-      calc(-1 * var(--r)) 100%/100% var(--r) repeat-x,
+  border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
+  mask:
+    radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%) calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
     conic-gradient(#000 0 0) padding-box;
   background: #ffffff border-box;
   width: 120px;

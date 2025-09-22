@@ -3,11 +3,11 @@ import Header from "../ui/organisms/Header/Header";
 
 function Layout({ children }) {
   return (
-    <div className="">
+    <div className="flex flex-col">
       <div >
         <Header/>
       </div>
-      <div>{children}</div>
+      <div className="">{children}</div>
       <div >
         <Footer />
       </div>

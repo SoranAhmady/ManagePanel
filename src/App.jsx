@@ -33,6 +33,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/menu" element={<MenuPage />}/> 
+          <Route path="/branchpage" element={<MenuPage />}/> 
           <Route path="/" element={<HomePage/>} />
           <Route path="/about" element={<AboutPage/>} />
           <Route path="/contact" element={<ContactPage/>} />
