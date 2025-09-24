@@ -46,7 +46,9 @@ export function MenuPageBranchSection() {
                                 <Icon name="locationw" />
                             </div>
                             <div className="flex items-center  sm:flex-col gap-5 sm:gap-3 text-[16px] pb-2  w-fit">
-                                <BranchPageTime item={item} />
+                                <div className="sm:hidden block">
+                                    <BranchPageTime item={item} />
+                                </div>
                                 <div className="flex flex-row sm:flex-col-reverse text-sm font-medium text-gray-700 gap-2 items-center">
                                     <P className={'sm:text-[16px] text-[10px] '}>{item.phone1}</P>
                                     <P className={'sm:text-[16px] text-[10px] sm:block hidden'}>{item.phone2}</P>

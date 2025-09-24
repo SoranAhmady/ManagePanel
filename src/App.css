@@ -23,7 +23,6 @@ input::-webkit-inner-spin-button {
 
 html{
   max-width: 100% !important ;
-  border: 1px solid black;
 }
 
 .swiper-button-prev {
