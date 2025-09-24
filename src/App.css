@@ -21,8 +21,9 @@ input::-webkit-inner-spin-button {
   font-family: Estedad;
 }
 
-html {
-  max-width: 100% !important;
+html{
+  max-width: 100% !important ;
+  border: 1px solid black;
 }
 
 .swiper-button-prev {
@@ -50,7 +51,8 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white;
+  background: #00000080;
+  
   border-radius: 99999px !important;
   cursor: pointer;
 }
@@ -59,12 +61,12 @@ body {
   background: transparent;
   border-radius: 99999px !important;
 
-} */
 
 /* https://css-shape.com/rounded-tab/ */
 .inverted-radius {
   --r: 25px;
   line-height: 1.8;
+
   padding-inline: .5em;
   border-inline: var(--r) solid #0000;
   border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
@@ -74,6 +76,7 @@ body {
   background: #ffffff border-box;
   width: 150px;
 }
+
 
 .inverted-radius2 {
   --r: 15px;
@@ -90,4 +93,16 @@ body {
 
 .BgImageGradint {
   background: linear-gradient(360deg, #000000 0%, rgba(255, 255, 255, 0) 60%);
+}
+
+.scroller {
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(3rem);
+  scroll-snap-type: y mandatory;
+}
+
+.scroller2 {
+  padding: 1rem;
+  scroll-snap-align: start;
 }

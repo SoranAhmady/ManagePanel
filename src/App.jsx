@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import "./App.css";
 import Layout from "./component/partial/Layout";
 import Login from "./page/Login/Login";
@@ -7,6 +7,10 @@ import { UserAxios } from "./core/Redux/GetAPI";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MenuPage } from "./page/MenuPage/MenuPage";
 import HomePage from "./page/HomePage/HomePage";
+import AboutPage from "./page/AboutPage/AboutPage";
+import ContactPage from "./page/ContactPage/ContactPage";
+import RepresentationPage from "./page/RepresentationPage/RepresentationPage";
+import { LoginContaxt } from "./context/LoginWindow";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,15 +25,21 @@ function App() {
     };
     Data();
   }, [dispatch]);
+  const { openLogin } = useContext(LoginContaxt);
 
+      
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/Login" element={<Login />} />
+          <Route path="/menu" element={<MenuPage />}/> 
           <Route path="/branchpage" element={<MenuPage />}/> 
           <Route path="/" element={<HomePage/>} />
+          <Route path="/about" element={<AboutPage/>} />
+          <Route path="/contact" element={<ContactPage/>} />
+          <Route path="/representation" element={<RepresentationPage/>} />
         </Routes>
+        {openLogin && <Login />}
       </Layout>
     </BrowserRouter>
   );
