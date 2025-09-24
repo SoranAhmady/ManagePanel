@@ -20,13 +20,29 @@ input::-webkit-inner-spin-button {
 * {
   font-family: Estedad;
 }
-html{
-  max-width: 100% !important ;
-  border: 1px solid black;
+
+html {
+  max-width: 100% !important;
 }
+
+.swiper-button-prev {
+  fill: white !important;
+  width: 48px;
+  color: white !important;
+}
+
+.swiper-button-next {
+  fill: white !important;
+  width: 48px;
+  position: absolute;
+
+  color: white !important;
+}
+
 body {
   max-width: 100% !important;
 }
+
 /* 
 ::-webkit-scrollbar {
   width: 8px;

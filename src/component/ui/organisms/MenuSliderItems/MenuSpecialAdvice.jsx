@@ -11,7 +11,7 @@ export function MenuSpecialAdvice() {
                 <P className={'text-2xl '}>
                     پیشنهاد ویژه
                 </P>
-                <MenuPageSlider item={special} />
+                <MenuPageSlider slideIndex={1} item={special} />
             </div>
         </div>
     )

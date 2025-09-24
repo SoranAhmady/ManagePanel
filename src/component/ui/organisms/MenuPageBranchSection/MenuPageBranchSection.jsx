@@ -1,24 +1,62 @@
 import P from "../../atoms/P/P";
-import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css/navigation';
 import 'swiper/css';
 import { branchPageArray } from "../../../../core/constans/branchPageArray";
-import Img from "../../atoms/Img/Img";
-
+import Icon from "../../atoms/Icon/Icon";
+import { motion } from "framer-motion";
+import { Autoplay, Navigation } from "swiper/modules";
+import { BranchPageTime } from "../../moloculse/BrnachPageTime/BranchPageTime";
 export function MenuPageBranchSection() {
     return (
-        <div className="flex justify-center flex-col items-center  w-full">
-            <P className={'text-2xl font-bold'}>
-                شعبه اکباتان
-            </P>
-            <Swiper>
+        <div className="flex flex-col items-center w-full">
+            <P className="text-2xl font-bold mb-6">شعبه اکباتان</P>
+            <Swiper
+                slidesPerView={1}
+                loop
+                navigation
+                modules={[Autoplay, Navigation]}
+                className="w-full "
+            >
                 {branchPageArray.map((item, index) => (
-                    <SwiperSlide key={index}>   
-                            <Img src={item.image} className={'w-20'}/>
+                    <SwiperSlide
+                        key={index}
+                        className="relative w-full border-3 pb-96 bg-white  border-black flex justify-center items-end"
+                    >
+                        <motion.img
+                            initial={{ y: 80 }}
+                            src={item.image}
+                            viewport={{ once: true }}
+                            whileInView={{
+                                y: 0,
+                            }}
+                            alt={`branch-${index}`}
+                            className="absolute  w-full h-[50vh] inset-0  object-cover"
+                        />
+                        <div className="absolute inset-0 bg-transparent " />
+                        <div className="relative z-20 sm:mb-6 w-[80%] sm:w-[50%] sm:translate-x-[50%]  translate-x-10 translate-y-[350px]  bg-white rounded-xl shadow-lg sm:p-7 sm:justify-around items-center flex-col flex sm:flex-row-reverse gap-4 border-2 border-[#417F56]">
+                            <div className="sm:block hidden">
+                                <BranchPageTime item={item} />
+
+                            </div>
+                            <div className="flex items-center sm:my-0 my-2 gap-4  justify-center sm:justify-center  flex-row sm:flex-col-reverse   sm:gap-3 text-[16px]  w-[90%]  sm:w-fit">
+                                <div className="flex flex-col text-sm font-medium text-gray-700 gap-2">
+                                    <P className={'sm:w-44 flex sm:text-[16px] text-[10px]  justify-end items-start text-center'}>{item.adrdess}</P>
+                                </div>
+                                <Icon name="locationw" />
+                            </div>
+                            <div className="flex items-center  sm:flex-col gap-5 sm:gap-3 text-[16px] pb-2  w-fit">
+                                <BranchPageTime item={item} />
+                                <div className="flex flex-row sm:flex-col-reverse text-sm font-medium text-gray-700 gap-2 items-center">
+                                    <P className={'sm:text-[16px] text-[10px] '}>{item.phone1}</P>
+                                    <P className={'sm:text-[16px] text-[10px] sm:block hidden'}>{item.phone2}</P>
+                                    <Icon name="phone222" />
+                                </div>
+                            </div>
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
         </div>
-    )
+    );
 }
