@@ -19,7 +19,7 @@ export function MenuPageSlider({ item = [], slideIndex }) {
     const loading = useSelector((state) => state.User.loding);
 
     return (
-        <div className="w-full relative z-0  ">
+        <div className="w-full relative z-0   ">
             <Button className={`Prev${slideIndex} sm:flex hidden border-2 p-2.5 px-3 rounded-lg absolute z-20 left-[160px] bg-white top-1/2`}>
                 <Icon name={"arrow-r"} />
             </Button>
@@ -43,8 +43,12 @@ export function MenuPageSlider({ item = [], slideIndex }) {
                         },
                         768: {
                             slidesPerView: 4.5,
-                            autoplay:false
-                        }
+                            autoplay: false
+                        },
+                        1024: {
+                            autoplay: false,
+                            slidesPerView: 4.5,
+                        },
                     }}
                     navigation={{
                         prevEl: `.Prev${slideIndex}`,

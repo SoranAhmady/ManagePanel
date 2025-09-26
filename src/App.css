@@ -21,8 +21,8 @@ input::-webkit-inner-spin-button {
   font-family: Estedad;
 }
 
-html{
-  max-width: 100% !important ;
+html {
+  max-width: 100% !important;
 }
 
 .swiper-button-prev {
@@ -30,6 +30,28 @@ html{
   width: 48px;
   color: white !important;
 }
+
+
+.swiper-pagination-bullet-active {
+  @apply !bg-[#417F56] cursor-pointer p-0.5 sm:p-1.5 sm:shadow-[0px_0px_0px_3px_#417f562f] shadow-[0px_0px_0px_2px_#417f562f]
+}
+
+.swiper-pagination-bullet {
+  @apply cursor-pointer !bg-[#417F56]
+}
+
+
+
+
+.swiper-slider-item {
+  display: flex !important;
+
+}
+
+.swiper-wrapper2 {
+  display: flex !important;
+}
+
 
 .swiper-button-next {
   fill: white !important;
@@ -52,7 +74,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #00000080;
   
-  border-radius: 99999px !important;
+  border-radius: 99999px !important;  
   cursor: pointer;
 }
 
@@ -61,6 +83,7 @@ body {
   border-radius: 99999px !important;
 
 
+  
 /* https://css-shape.com/rounded-tab/ */
 .inverted-radius {
   --r: 25px;

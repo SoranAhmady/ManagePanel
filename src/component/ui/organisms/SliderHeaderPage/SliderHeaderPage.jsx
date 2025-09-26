@@ -1,11 +1,8 @@
-import React from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Img from "./../../atoms/Img/Img";
-import { motion } from "framer-motion";
 import Icon from "../../atoms/Icon/Icon";
 import P from "../../atoms/P/P";
 import Button from "../../atoms/Button/Button";
@@ -78,3 +75,4 @@ function SliderHeaderPage() {
 }
 
 export default SliderHeaderPage;
+  
