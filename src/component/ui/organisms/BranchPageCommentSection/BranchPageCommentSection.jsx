@@ -104,7 +104,7 @@ export function BranchPageCommentSection() {
                         })}
                     </Swiper>
                 </div>
-                <div className="  paginate11 z-10  h-[23px] md:h-[33px] gap-1.5 hidden sm:flex items-center justify-center mb-4 mt-2" >
+                <div className="  paginate11 z-10  h-[23px] md:h-[33px]  hidden sm:flex items-center justify-center mb-4 mt-2" >
                     <div className=" w-full flex items-center justify-center "></div>
                 </div>
             </div>

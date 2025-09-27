@@ -13,7 +13,7 @@ export function MenuPagePapularFood() {
                 <P className={'text-white text-2xl '}>
                     غذاهای محبوب
                 </P>
-                <MenuPageSlider slideIndex={2} item={papularProducts}/>
+                <MenuPageSlider slideIndex={2} item={papularProducts.slice(0, 5)} />
             </div>
         </div>
     )
