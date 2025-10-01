@@ -5,12 +5,13 @@ import Login from "./page/Login/Login";
 import { useDispatch } from "react-redux";
 import { UserAxios } from "./core/Redux/GetAPI";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { MenuPage } from "./page/MenuPage/MenuPage";
 import HomePage from "./page/HomePage/HomePage";
 import AboutPage from "./page/AboutPage/AboutPage";
 import ContactPage from "./page/ContactPage/ContactPage";
 import RepresentationPage from "./page/RepresentationPage/RepresentationPage";
 import { LoginContaxt } from "./context/LoginWindow";
+import { BranchPage } from "./page/BranchPage/BranchPage";
+import MenuPage from "./page/MenuPage/MenuPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,17 +28,17 @@ function App() {
   }, [dispatch]);
   const { openLogin } = useContext(LoginContaxt);
 
-      
+
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/menu" element={<MenuPage />}/> 
-          <Route path="/branchpage" element={<MenuPage />}/> 
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/about" element={<AboutPage/>} />
-          <Route path="/contact" element={<ContactPage/>} />
-          <Route path="/representation" element={<RepresentationPage/>} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/branchpage" element={<BranchPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/representation" element={<RepresentationPage />} />
         </Routes>
         {openLogin && <Login />}
       </Layout>
